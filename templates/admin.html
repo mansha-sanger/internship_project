@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="/admin/details">View Details</a>
+  <a href="/export">Export CSV</a>
+  <a href="/logout">Logout</a>
+</div>
+
+<div class="card">
+  <h2>Admin Dashboard</h2>
+  <p>Total Contacts: <b>{{ total }}</b></p>
+</div>
+
+<div class="card">
+  <h3>Company Wise Contacts</h3>
+  <canvas id="companyChart"></canvas>
+</div>
+
+<div class="card">
+  <h3>Email Domain Distribution</h3>
+  <canvas id="domainChart"></canvas>
+</div>
+
+<script>
+  const companyLabels = {{ company_labels | safe }};
+  const companyValues = {{ company_values | safe }};
+
+  new Chart(document.getElementById("companyChart"), {
+    type: "bar",
+    data: {
+      labels: companyLabels,
+      datasets: [{
+        label: "Contacts",
+        data: companyValues
+      }]
+    }
+  });
+
+  const domainLabels = {{ domain_labels | safe }};
+  const domainValues = {{ domain_values | safe }};
+
+  new Chart(document.getElementById("domainChart"), {
+    type: "pie",
+    data: {
+      labels: domainLabels,
+      datasets: [{
+        data: domainValues
+      }]
+    }
+  });
+</script>
+
+</body>
+</html>

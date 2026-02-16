@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Role</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="card">
+  <h1>Select Role</h1>
+
+  <a class="btn" href="{{ url_for('customer_login') }}">Customer</a>
+  <a class="btn" href="{{ url_for('admin_login') }}">Admin</a>
+
+  <a class="back-btn" href="{{ url_for('welcome') }}">← Back</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Domain Distribution</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="card wide">
+  <h1>Email Domain Distribution</h1>
+
+  <a class="btn" href="{{ url_for('admin_dashboard') }}">Back</a>
+
+  {% if domain_count|length == 0 %}
+    <p>No data available.</p>
+  {% else %}
+    <table>
+      <tr>
+        <th>Email Domain</th>
+        <th>Total</th>
+      </tr>
+
+      {% for domain, total in domain_count.items() %}
+      <tr>
+        <td>{{ domain }}</td>
+        <td>{{ total }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+</div>
+
+</body>
+</html>

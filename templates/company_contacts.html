@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Company Wise Contacts</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="card wide">
+  <h1>Company Wise Contacts</h1>
+
+  <a class="btn" href="{{ url_for('admin_dashboard') }}">Back</a>
+
+  {% if data|length == 0 %}
+    <p>No data available.</p>
+  {% else %}
+    <table>
+      <tr>
+        <th>Company</th>
+        <th>Total Contacts</th>
+      </tr>
+
+      {% for row in data %}
+      <tr>
+        <td>{{ row.company }}</td>
+        <td>{{ row.total }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+</div>
+
+</body>
+</html>

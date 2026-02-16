@@ -1,0 +1,107 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 18px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+}
+
+.card.wide {
+  width: 750px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 95%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn.secondary {
+  background: #ef4444;
+}
+
+.back-btn {
+  display: block;
+  margin-top: 15px;
+  color: white;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.error {
+  color: #ffb4b4;
+  font-weight: bold;
+}
+
+.success {
+  color: #9effc3;
+  font-weight: bold;
+}
+
+.hint {
+  margin-top: 15px;
+  opacity: 0.7;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.small-btn {
+  padding: 8px 12px;
+  background: #22c55e;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

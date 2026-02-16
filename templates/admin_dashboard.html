@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="card wide">
+  <h1>Admin Dashboard</h1>
+
+  <div class="nav">
+    <a class="btn" href="{{ url_for('company_contacts') }}">Company Wise</a>
+    <a class="btn" href="{{ url_for('email_distribution') }}">Email Domains</a>
+    <a class="btn" href="{{ url_for('export_csv') }}">Export CSV</a>
+    <a class="btn secondary" href="{{ url_for('logout') }}">Logout</a>
+  </div>
+
+  <h2>All Contacts</h2>
+
+  {% if contacts|length == 0 %}
+    <p>No contacts yet.</p>
+  {% else %}
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Action</th>
+      </tr>
+
+      {% for c in contacts %}
+      <tr>
+        <td>{{ c.id }}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.company }}</td>
+        <td>
+          <a class="small-btn" href="{{ url_for('view_details', contact_id=c.id) }}">View Details</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+</div>
+
+</body>
+</html>

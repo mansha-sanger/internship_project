@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="card">
+    <h1>{{ role|capitalize }} Login</h1>
+    <p class="subtitle">Enter your credentials</p>
+
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+      <input type="text" name="username" placeholder="Enter Username" required>
+      <input type="password" name="password" placeholder="Enter Password" required>
+
+      <button class="btn" type="submit">Login</button>
+    </form>
+
+    <!-- Credentials hint (BACK) -->
+    <p class="hint">
+      Admin: <b>admin</b> / <b>admin123</b> <br>
+      Customer: <b>customer</b> / <b>cust123</b>
+    </p>
+
+    <!-- Back -->
+    <a href="{{ url_for('role') }}" class="back-btn">← Back</a>
+
+  </div>
+
+</body>
+</html>
